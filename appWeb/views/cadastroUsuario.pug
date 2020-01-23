@@ -1,0 +1,31 @@
+extends layout/layout
+
+block content
+  h1 Cadastro usuário
+  form(method='POST' action='/users' class="form-signin")
+  
+    label(for="nome") Nome Usuário:
+    input(
+      type='text'
+      name='nome'
+      placeholder='Digite seu nome'
+      class="form-control"
+      required
+    )
+
+    label(for="senha") Senha:
+      input(
+        type='password'
+        name='senha'
+        placeholder='Digite sua senha'
+        class="input-group-text"
+        required
+    )
+    div(class="btn-group btn-group-toggle" data-toggle="buttons")
+      input(
+          type='submit'
+          name='Cadastrar'
+          value='Cadastrar'
+          class="btn btn-outline-primary"
+        )
+      a(class="btn btn-outline-warning" href='/') Voltar

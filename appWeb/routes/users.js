@@ -1,9 +1,21 @@
 var express = require('express');
-var router = express.Router();
+var router  = express.Router();
+var axios   = require('axios');
 
-/* GET users listing. */
 router.get('/', function(req, res, next) {
-  res.send('respond with a resource');
+  res.render('cadastroUsuario');
+});
+
+router.post('/', function (req, res, next) {
+  axios.post('http://localhost:3000/users', {
+    nome: req.body.nome,
+    senha: req.body.senha
+  }).then(function (response) {
+    console.log(response.data);
+    if (response.status == 200)
+      res.redirect("/")
+  });
+  
 });
 
 module.exports = router;

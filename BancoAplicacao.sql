@@ -1,3 +1,4 @@
+
 CREATE DATABASE if not exists Desafio;
 use Desafio;
 
@@ -11,8 +12,8 @@ CREATE TABLE IF NOT EXISTS LIVRO (
 
 CREATE TABLE IF NOT EXISTS USUARIO (
   id INT NOT NULL AUTO_INCREMENT primary key,
-  nome varchar(200),
-  senha varchar(200)
+  nome varchar(200) UNIQUE NOT NULL,
+  senha varchar(200) NOT NULL
 );
 
 CREATE TABLE IF NOT EXISTS EMPRESTIMO (
@@ -25,3 +26,6 @@ CREATE TABLE IF NOT EXISTS EMPRESTIMO (
 	FOREIGN KEY(id_usuario)
 		REFERENCES USUARIO(id)
 );
+
+insert into Usuario (nome, senha) 
+ 	value ("adm","123");
