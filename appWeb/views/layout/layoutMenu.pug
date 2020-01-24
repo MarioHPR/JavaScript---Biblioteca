@@ -1,0 +1,36 @@
+doctype html
+html
+  head
+    meta(charset='utf-8')
+    meta(name='viewport' content='width=device-width, initial-scale=1, shrink-to-fit=no')
+    link(rel='stylesheet' href='https://use.fontawesome.com/releases/v5.8.2/css/all.css' integrity='sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay' crossorigin='anonymous')
+    // Bootstrap CSS
+    link(rel='stylesheet' href='https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css' integrity='sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO' crossorigin='anonymous')
+    title Olá, Seja bem vindo
+    style(type='text/css').
+      body{
+        background-color: gray;
+        text-align: center;
+      }
+      button{
+        font-family: "Times New Roman";
+      }; 
+      #bt1,#bt2{
+        width: 170px;
+      }
+      img{
+        height: 400px;
+        object-fit: cover;
+      }
+    body
+      nav( class = "barnavbar-dark bg-dark")
+        button.btn.btn-dark(type='button' onclick="window.location.href='teste.html'")
+          | Doar um livro
+        button.btn.btn-dark(type='button' onclick='')
+          |  Retirar um livro
+        button.btn.btn-dark(type='button' onclick='')
+          |  Devolver um livro
+        button.btn.btn-dark(type='button' onclick='')
+          |  Deslogar
+      .main-page
+      block content

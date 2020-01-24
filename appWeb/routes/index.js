@@ -1,8 +1,7 @@
 var express = require('express');
-var router = express.Router();
-var axios = require('axios');
+var router  = express.Router();
+var axios   = require('axios');
 
-/* GET home page. */
 router.get('/', function (req, res, next) {
   res.render('index');
 });
@@ -12,14 +11,12 @@ router.post('/', function (req, res, next) {
     login: req.body.login,
     senha: req.body.senha
   }).then(function (response) {
-    console.log(response.status); // ex.: { user: 'Your User'}
+    console.log(response.status);
     if (response.status == 200) {
-      console.log("foi deu gol");
-      res.redirect('/');
+      res.redirect('biblioteca');
     }
     
   }).catch(error => { 
-    console.log("Não deu gol");
     res.redirect('/');
   });
 });
