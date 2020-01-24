@@ -1,7 +1,7 @@
 var express = require('express');
-var router = express.Router();
+var router  = express.Router();
 
-var mysql = require('mysql');
+var mysql     = require('mysql');
 var consMysql = 'mysql://root:@localhost:3306/Desafio';
 
 /* GET home page. */

@@ -1,3 +1,37 @@
 extends ../layout/layoutMenu
 
 block content
+  h1.h3.mb-0.text-gray-800  Livros cadastrados no sistema
+  .container
+    .row
+      each livro in livros
+        .card.mb-1
+          .card-body
+            p Número: 
+              = livro.numero
+            h5.card-title Título: 
+              = livro.titulo
+            p Autor: 
+              = livro.autor
+            p Ano: 
+              = livro.ano
+            p Situação: 
+              = livro.situacao
+            a(href='' name="" class="btn btn-primary") Retirar livro
+  .container
+    .row
+      each livro in livrosIndisponivel
+        .card.mb-1
+          .card-body
+            p Número: 
+              = livro.numero
+            h5.card-title Título: 
+              = livro.titulo
+            p Autor: 
+              = livro.autor
+            p Ano: 
+              = livro.ano
+            p Situação: 
+              = livro.situacao
+            p Emprestado para : 
+              = livro.nome
