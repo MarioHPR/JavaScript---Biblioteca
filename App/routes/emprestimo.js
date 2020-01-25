@@ -5,7 +5,7 @@ var consMysql = 'mysql://root:@localhost:3306/Desafio';
 
 router.get('/', function (req, res, next) {
     
-    var sql = 'SELECT DISTINCT  * from USUARIO inner join EMPRESTIMO inner join LIVRO on EMPRESTIMO.id_usuario = USUARIO.id and EMPRESTIMO.id_livro = LIVRO.numero;';
+    var sql = 'SELECT DISTINCT  * from USUARIO inner join EMPRESTIMO inner join LIVRO on EMPRESTIMO.id_usuario = USUARIO.id and EMPRESTIMO.id_livro = LIVRO.numero WHERE EMPRESTIMO.situacao = -1;';
 
     const connection = mysql.createConnection(consMysql);
     connection.connect();
@@ -19,4 +19,26 @@ router.get('/', function (req, res, next) {
     connection.end();
 });
 
+router.post('/', function (req, res) {
+
+    let emprestimo = [];
+    console.log("aaaaaaaaaaaaaaaaaaaaaaaaaa " + req.body.idLivro)
+    console.log("aaaaaaaaaaaabbbbbbbbbbbbbb " + req.body.idUsuario)
+    emprestimo.push(req.body.situacao);
+    emprestimo.push(req.body.idLivro);
+    emprestimo.push(req.body.idUsuario);
+
+    var sql = "INSERT INTO EMPRESTIMO (situacao,id_livro,id_usuario)VALUE(?,?,?)";
+    const connection = mysql.createConnection(consMysql);
+    connection.connect();
+    connection.query(sql, emprestimo, function (error, result) {
+        if (error) {
+            console.log(error)
+            return res.status(304).end();
+        }
+        console.log(result)
+        return res.status(200).end();
+    });
+    connection.end();
+});
 module.exports = router;

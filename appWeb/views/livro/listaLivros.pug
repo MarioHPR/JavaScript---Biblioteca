@@ -17,7 +17,10 @@ block content
               = livro.ano
             p Situação: 
               = livro.situacao
-            a(href='' name="" class="btn btn-primary") Retirar livro
+            form(method="post" action="/biblioteca")
+              input(type="hidden" id="id" name='idLivro' value= livro.numero)
+              input(type="hidden" id="status" name='situacao' value= livro.situacao)
+              input(type='submit' Value='Retirar livro' name="retirar" class="btn btn-primary") 
   .container
     .row
       each livro in livrosIndisponivel
