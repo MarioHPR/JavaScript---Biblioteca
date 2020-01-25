@@ -13,7 +13,6 @@ router.get('/', function (req, res, next) {
         if (error) {
             return res.status(304).end();
         }
-        console.log(results);
         return res.status(200).json(results);
     });
     connection.end();
@@ -29,14 +28,12 @@ router.get('/usuario', function (req, res, next) {
         if (error) {
             return res.status(304).end();
         }
-        console.log(results);
         return res.status(200).json(results);
     });
     connection.end();
 });
 
 router.post('/', function (req, res) {
-    console.log("fiudfnweuidnwedowdmw " + req.body.idEmprestimo);
 
     if(req.body.situacao == -1){
         let emprestimo = [];
@@ -52,7 +49,6 @@ router.post('/', function (req, res) {
                 console.log(error)
                 return res.status(304).end();
             }
-            console.log(result)
             return res.status(200).end();
         });
         connection.end();
@@ -69,7 +65,6 @@ router.post('/', function (req, res) {
                 console.log(error)
                 return res.status(304).end();
             }
-            console.log(result)
             return res.status(200).end();
         });
         connection.end();

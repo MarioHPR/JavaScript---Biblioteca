@@ -7,9 +7,6 @@ router.get('/', function (req, res, next) {
 });
 
 router.post('/', function (req, res, next) {
-    console.log(req.body.autor);
-    console.log(req.body.ano);
-    console.log(req.body.titulo);
     axios.post('http://localhost:3000/livro/add',
         {
             titulo   : req.body.titulo,

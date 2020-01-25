@@ -11,7 +11,6 @@ router.post('/', function (req, res, next) {
     nome: req.body.nome,
     senha: req.body.senha
   }).then(function (response) {
-    console.log(response.data);
     if (response.status == 200)
       res.redirect("/")
   });

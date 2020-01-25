@@ -1,6 +1,5 @@
-var express = require('express');
-var router  = express.Router();
-
+var express   = require('express');
+var router    = express.Router();
 var mysql     = require('mysql');
 var consMysql = 'mysql://root:@localhost:3306/Desafio';
 
@@ -17,7 +16,6 @@ router.post('/', function (req, res, next) {
       return res.status(304).end();
     }
     let resposta = { id: result.insertId };
-    console.log(resposta);
     return res.status(200).location('http://').json(resposta);
   });
 });

@@ -11,11 +11,9 @@ router.post('/', function (req, res, next) {
     login: req.body.login,
     senha: req.body.senha
   }).then(function (response) {
-    console.log(response.status);
     if (response.status == 200) {
       res.redirect('biblioteca');
     }
-    
   }).catch(error => { 
     res.redirect('/');
   });

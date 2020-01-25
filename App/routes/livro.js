@@ -43,12 +43,12 @@ router.post('/add', function (req, res) {
 });
 
 router.delete('/:id', function (req, res, next) {
-    let usuario = [];
-    usuario.push(req.params.id);
+    let livro = [];
+    livro.push(req.params.id);
     const connection = mysql.createConnection(consMysql);
     let sql = "DELETE FROM LIVRO WHERE numero = ?";
     connection.connect();
-    connection.query(sql, usuario, function (error, results) {
+    connection.query(sql, livro, function (error, results) {
         if (error) {
             return res.status(304).end();
         }
