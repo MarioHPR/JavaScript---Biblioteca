@@ -1,0 +1,26 @@
+extends ../layout/layoutMenu
+
+block content
+  h1.h3.mb-0.text-gray-800  Livros que você pegou emprestado
+  .container
+    .row
+      each livro in livrosRetirados
+        .card.mb-1
+          .card-body
+            p Número: 
+              = livro.numero
+            h5.card-title Título: 
+              = livro.titulo
+            p Autor: 
+              = livro.autor
+            p Ano: 
+              = livro.ano
+            p Situação: 
+              = livro.situacao
+            p Emprestado para : 
+              = livro.nome
+            form(method="post" action="/biblioteca")
+              input(type="hidden" name='idLivro' value= livro.numero)
+              input(type="hidden" name='situacao' value= livro.situacao)
+              input(type="hidden" name='idEmprestimo' value= livro.id)
+              input(type='submit' Value='Devolver livro' name="devolver" class="btn btn-primary")

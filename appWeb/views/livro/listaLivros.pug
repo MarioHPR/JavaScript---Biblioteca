@@ -18,8 +18,8 @@ block content
             p Situação: 
               = livro.situacao
             form(method="post" action="/biblioteca")
-              input(type="hidden" id="id" name='idLivro' value= livro.numero)
-              input(type="hidden" id="status" name='situacao' value= livro.situacao)
+              input(type="hidden"  name='idLivro' value= livro.numero)
+              input(type="hidden"  name='situacao' value= livro.situacao)
               input(type='submit' Value='Retirar livro' name="retirar" class="btn btn-primary") 
   .container
     .row
