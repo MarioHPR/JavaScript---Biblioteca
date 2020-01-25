@@ -22,13 +22,13 @@ html
         height: 400px;
         object-fit: cover;
       }
-    body
-      nav( class = "barnavbar-dark bg-dark")
-        button.btn.btn-dark(type='button' onclick="window.location.href='/livro'")
-          | Doar um livro
-        button.btn.btn-dark(type='button' onclick="window.location.href='/biblioteca/devolucao'")
-          |  Devolver um livro
-        button.btn.btn-dark(type='button' onclick="window.location.href='/'")
-          |  Deslogar
+  body
+    nav( class = "barnavbar-dark bg-dark")
+      button.btn.btn-dark(type='button' onclick="window.location.href='/livro'")
+        | Doar um livro
+      button.btn.btn-dark(type='button' onclick="window.location.href='/biblioteca/devolucao'")
+        |  Devolver um livro
+      button.btn.btn-dark(type='button' onclick="window.location.href='/'")
+        |  Deslogar
       .main-page
-      block content
+    block content
