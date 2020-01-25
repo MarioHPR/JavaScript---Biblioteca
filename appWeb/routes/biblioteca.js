@@ -1,6 +1,7 @@
 var express = require('express');
 var router  = express.Router();
 var axios   = require('axios');
+const session = require("express-session");
 
 router.get('/', function (req, res, next) {
     axios.get('http://localhost:3000/biblioteca').then(function (response) {
@@ -22,7 +23,7 @@ router.get('/devolucao', function (req, res, next) {
     
     axios.get('http://localhost:3000/emprestimo/usuario', {
         params: {
-            idUsuario: 1
+            idUsuario: localStorage
         }
     }).then(function (response) {
         if (response.status == 200) {
@@ -47,7 +48,7 @@ router.post('/', function (req, res, next) {
        
     axios.post('http://localhost:3000/emprestimo',
         {
-            idUsuario: 1,
+            idUsuario: localStorage,
             idLivro: req.body.idLivro,
             situacao: aux,
             idEmprestimo: req.body.idEmprestimo
