@@ -26,3 +26,8 @@ CREATE TABLE IF NOT EXISTS EMPRESTIMO (
 	FOREIGN KEY(id_usuario)
 		REFERENCES USUARIO(id)
 );
+
+INSERT INTO LIVRO (titulo, autor, ano, situacao) 
+	VALUE ("Como fazer sentido e bater o martelo","Alexandro Aolchique","2017","Disponivel"),
+		  ("Código Limpo","Tio Bob","2001","Disponivel"),
+          ("Basquete 101","Hortência Marcari","2010","Disponivel");
